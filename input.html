@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Charades/Bowls</title>
+        <script src="js_functions.js"></script>
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+    <div id="header"><h1>Charades/Bowls!</h1></div>
+        <p>Welcome to the open source charades/bowls solution!</p>
+
+
+        <div id='question_form'>
+        <p>This is the form:</p>
+            <form id="charades_input">
+                <select id="teamselector">
+                    <option value='team1'>Team 1</option>
+                    <option value='team2'>Team 2</option>
+                </select>
+                <div id="input_div_0" name="clue"><input id="charades_input_0" onkeyup="showCharLen(this)" type="text" spellcheck='true'></input><span id="charlen_0" class="grayed_text"></span><input id="remove_div_0" type="button" value="Remove" onclick="removeInput(this)"></div>
+            </form>
+            <button id ="addClue" onclick='addInput()'>Add Clue</button>
+            <button id="submitButton" onclick='submitClues()'>Submit</button>
+        </div>
+
+
+    </body>
+</html>

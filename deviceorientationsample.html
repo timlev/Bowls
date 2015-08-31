@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en"> 
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title></title>
-  
+
   <style type="text/css">
     body {
       font-family: sans-serif;
     }
-  
+
       .main {
       border: 1px solid black;
       box-shadow: 10px 10px 5px #888;
@@ -18,9 +18,9 @@
       margin: 25px;
       width: 450px;
       margin-left:auto;
-      margin-right:auto;  
+      margin-right:auto;
     }
-    
+
     .logo {
       width:275px;
       margin-left: auto;
@@ -28,7 +28,7 @@
       display: block;
       padding: 15px;
     }
-    
+
     .container {
       -webkit-perspective: 300; perspective: 300;
     }
@@ -57,15 +57,15 @@
         </tr>
       </table>
   </div>
-  
+
   <div class="container" style="-webkit-perspective: 300; perspective: 300;">
     <img src="html5_logo.png" id="imgLogo" class="logo">
   </div>
-  
+
   <script type="text/javascript">
     init();
     var count = 0;
-    
+
     function init() {
       if (window.DeviceOrientationEvent) {
         document.getElementById("doEvent").innerHTML = "DeviceOrientation";
@@ -73,13 +73,15 @@
         window.addEventListener('deviceorientation', function(eventData) {
           // gamma is the left-to-right tilt in degrees, where right is positive
           var tiltLR = eventData.gamma;
-          
+
           // beta is the front-to-back tilt in degrees, where front is positive
           var tiltFB = eventData.beta;
-          
+
           // alpha is the compass direction the device is facing in degrees
           var dir = eventData.alpha
-          
+          if (tiltLR === 90){
+            alert("TiltLR is 90");
+          }
           // call our orientation event handler
           deviceOrientationHandler(tiltLR, tiltFB, dir);
           }, false);
@@ -87,26 +89,26 @@
         document.getElementById("doEvent").innerHTML = "Not supported on your device or browser.  Sorry."
       }
     }
-  
+
     function deviceOrientationHandler(tiltLR, tiltFB, dir) {
       document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
       document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
       document.getElementById("doDirection").innerHTML = Math.round(dir);
-      
+
       // Apply the transform to the image
       var logo = document.getElementById("imgLogo");
       logo.style.webkitTransform = "rotate("+ tiltLR +"deg) rotate3d(1,0,0, "+ (tiltFB*-1)+"deg)";
       logo.style.MozTransform = "rotate("+ tiltLR +"deg)";
       logo.style.transform = "rotate("+ tiltLR +"deg) rotate3d(1,0,0, "+ (tiltFB*-1)+"deg)";
     }
-    
-    
+
+
     // Some other fun rotations to try...
     //var rotation = "rotate3d(0,1,0, "+ (tiltLR*-1)+"deg) rotate3d(1,0,0, "+ (tiltFB*-1)+"deg)";
     //var rotation = "rotate("+ tiltLR +"deg) rotate3d(0,1,0, "+ (tiltLR*-1)+"deg) rotate3d(1,0,0, "+ (tiltFB*-1)+"deg)";
   </script>
-  
-  
+
+
 
 </body>
 </html>

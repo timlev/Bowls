@@ -1,7 +1,7 @@
 init();
     var count = 0;
     screen.orientation.addEventListener("change", function(e) {
-      console.log(screen.orientation.type + " " + screen.orientation.angle);
+      alert(screen.orientation.type + " " + screen.orientation.angle);
     }, false);
     function init() {
       if (window.DeviceOrientationEvent) {

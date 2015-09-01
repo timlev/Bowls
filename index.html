@@ -2,10 +2,12 @@
 <head>
 <title>Bowls</title>
 <script>
-alert(screen.orientation.type);
+function logOrientation(){
+  alert(screen.orientation.type);
+}
 </script>
 </head>
-<body>
+<body onload="logOrientation">
 <a href="input.html">Input</a>
 <a href="headsupdisplay.html">Heads Up Display</a>
 </body>

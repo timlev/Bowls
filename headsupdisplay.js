@@ -3,9 +3,8 @@ screen.orientation.addEventListener("change", function(e) {
     }, false);
 
 function onload(){
-document.getElementById("button").addEventListener("click", function() {
-  document.documentElement.requestFullScreen();
-  screen.orientation.lock("landscape-primary");
 
+document.getElementById("button").addEventListener("click", function() {
+  screen.orientation.lock("landscape-primary");
 }, false);
 }

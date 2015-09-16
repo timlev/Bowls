@@ -8,14 +8,14 @@ function deviceMotionHandler(eventData){
   document.getElementById("accel").innerHTML = info;
 };
 
-// screen.orientation.addEventListener("change", function(e) {
-//       alert(screen.orientation.type + " " + screen.orientation.angle);
-//     }, false);
-if (window.DeviceMotionEvent) {
-  alert("DeviceMotionEvent supported");
-  window.addEventListener('devicemotion', deviceMotionHandler, false);
-};
 function onload(){
+  // screen.orientation.addEventListener("change", function(e) {
+  //       alert(screen.orientation.type + " " + screen.orientation.angle);
+  //     }, false);
+  if (window.DeviceMotionEvent) {
+    alert("DeviceMotionEvent supported");
+    window.addEventListener('devicemotion', deviceMotionHandler, false);
+  };
 
   document.getElementById("button").addEventListener("click", function() {
     screen.orientation.lock("landscape-primary");

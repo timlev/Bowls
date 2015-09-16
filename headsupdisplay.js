@@ -14,10 +14,10 @@ function deviceMotionHandler(eventData){
 if (window.DeviceMotionEvent) {
   alert("DeviceMotionEvent supported");
   window.addEventListener('devicemotion', deviceMotionHandler, false);
-}
+};
 function onload(){
 
-document.getElementById("button").addEventListener("click", function() {
-  screen.orientation.lock("landscape-primary");
-}, false);
-}
+  document.getElementById("button").addEventListener("click", function() {
+    screen.orientation.lock("landscape-primary");
+  }, false);
+};

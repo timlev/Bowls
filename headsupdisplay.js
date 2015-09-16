@@ -1,10 +1,10 @@
 function deviceMotionHandler(eventData){
   var info, xyz = "[X,Y,Z]";
-  //Grab Acceleration Data from Result
-  var acceleration = eventData.acceleration;
-  info = xyz.replace("X", acceleration.x);
-  info = info.replace("Y", acceleration.y);
-  info = info.replace("Z", acceleration.z);
+  //Grab rotation Data from Result
+  var rotation = eventData.rotationRate;
+  info = xyz.replace("X", rotation.alpha);
+  info = info.replace("Y", rotation.beta);
+  info = info.replace("Z", rotation.gamma);
   document.getElementById("accel").innerHTML = info;
 }
 

@@ -6,11 +6,11 @@ function deviceMotionHandler(eventData){
   info = info.replace("Y", rotation.beta);
   info = info.replace("Z", rotation.gamma);
   document.getElementById("accel").innerHTML = info;
-}
+};
 
-screen.orientation.addEventListener("change", function(e) {
-      alert(screen.orientation.type + " " + screen.orientation.angle);
-    }, false);
+// screen.orientation.addEventListener("change", function(e) {
+//       alert(screen.orientation.type + " " + screen.orientation.angle);
+//     }, false);
 if (window.DeviceMotionEvent) {
   alert("DeviceMotionEvent supported");
   window.addEventListener('devicemotion', deviceMotionHandler, false);

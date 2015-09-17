@@ -13,9 +13,9 @@ function onload(){
   //       alert(screen.orientation.type + " " + screen.orientation.angle);
   //     }, false);
 
-  if (screen.DeviceMotionEvent) {
+  if (window.DeviceMotionEvent) {
     alert("DeviceMotionEvent supported");
-    screen.addEventListener('devicemotion', deviceMotionHandler, false);
+    window.addEventListener('devicemotion', deviceMotionHandler, false);
   };
 
   document.getElementById("button").addEventListener("click", function() {

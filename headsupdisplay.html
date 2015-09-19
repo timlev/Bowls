@@ -3,6 +3,7 @@
   <script src="headsupdisplay.js"></script>
   <script>
   function deviceMotionHandler(eventData){
+    alert(eventData);
     var info, xyz = "[X,Y,Z]";
     //Grab rotation Data from Result
     var rotation = eventData.rotationRate;
